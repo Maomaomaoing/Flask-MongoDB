@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Querying</title>
+  </head>
+  <body>
+	<h1>Querying</h1>
+	
+	<p>
+		<font size="5"><b> Other page </b></font> &emsp;
+		<a href="http://127.0.0.1:5000"> Homepage </a> &emsp;
+		<a href="http://127.0.0.1:5000/analysis_result"> Analysis Result </a> 
+	</p>
+	<p>
+		<font size="5"><b> Querying by Attribute </b></font>	
+		<br>
+		<form action="{{ url_for('querying') }}" method="post" name="query">
+			<!-- {{ form.csrf_token }} -->
+			<font size="4"><b> Time and Location </b></font>
+			<br> &emsp;
+			<font size="4"> State </font> {{form.State}} &emsp;
+			<font size="4"> Agency Type </font> {{form.AgencyType}} &emsp;
+			<font size="4"> Year </font> {{form.Year}} &emsp;
+			<font size="4"> Month </font> {{form.Month}} &emsp;
+			<br>
+			<br>
+			<font size="4"><b> Crime Information </b></font>
+			<br> &emsp;
+			<font size="4"> Crime Solved </font> {{form.CrimeSolved}} &emsp;
+			<font size="4"> Crime Type </font> {{form.CrimeType}} &emsp;		
+			<font size="4"> Weapon </font> {{form.Weapon}} &emsp;
+			<font size="4"> Relationship </font> {{form.Relationship}} &emsp;
+			<br>
+			<br>
+			<font size="4"><b> Perpetrator Information </b></font>
+			<br> &emsp;
+			<font size="4"> Perpetrator Count </font> {{form.PerpetratorCount}} &emsp;
+			<font size="4"> Perpetrator Ethnicity </font> {{form.PerpetratorEthnicity}} &emsp;
+			<font size="4"> Perpetrator Race </font> {{form.PerpetratorRace}} &emsp;
+			<font size="4"> Perpetrator Sex </font> {{form.PerpetratorSex}} &emsp;
+			<br>
+			<br>
+			<font size="4"><b> Victim Information </b></font>
+			<br> &emsp;			
+			<font size="4"> Victim Count </font> {{form.VictimCount}} &emsp;
+			<font size="4"> Victim Ethnicity </font> {{form.VictimEthnicity}} &emsp;
+			<font size="4"> Victim Race </font> {{form.VictimRace}} &emsp;
+			<font size="4"> Victim Sex </font> {{form.VictimSex}} &emsp;
+			<p>&emsp;<input type="submit" value="Search"></p>
+		</form>
+	</p>
+	
+	<p>
+		<font size="5"><b> Result </b></font>
+		<br>
+		<br>
+		<table>
+			{% for row in query_result %}	
+				<tr>
+				{% for data in row %}
+					<td><font size="4"> {{data}} </font></td> 
+				{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>		
+	</p>
+  </body>
+</html>

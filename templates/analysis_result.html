@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Analysis</title>
+  </head>
+  <body>
+	<h1>Analysis</h1>
+	
+	<p>
+		<font size="5"><b> Other page </b></font> &emsp;
+		<a href="http://127.0.0.1:5000"> Homepage </a> &emsp;
+		<a href="http://127.0.0.1:5000/querying"> Querying </a> 
+	</p>	
+
+	<table>
+	{% for row in plot_result.keys() %}
+		<tr>
+			<td> <font size="5"><b> {{row}} </b></font> </td>
+		</tr>
+		<tr>
+			
+			<td><img src={{plot_result[row][0]}} alt={{row}} width="600"/></td> 
+			<td><font size="4"> {{plot_result[row][1]}} </font></td>
+		</tr>
+		
+	{% endfor %}
+	</table>
+  </body>
+</html>

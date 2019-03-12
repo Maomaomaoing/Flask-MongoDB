@@ -1,0 +1,31 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Home</title>
+    {% endif %}
+  </head>
+  <body>
+	<h1>Hello, {{user.nickname}}!</h1>
+	<!--
+	{% for post in posts %}
+	<p>Record Source is {{post['Record Source']}} is: <b></b></p>
+    {% endfor %}
+	{% if title %}
+    <title>{{title}} - microblog</title>
+    {% else %}
+    <title>Welcome to microblog</title>
+    {% endif %}
+	-->
+	<p><input type="text" name="欄位名稱">	<input type="button" value="按鈕1"></input></p>
+	<p><img src="C:\Users\user\Desktop\hw1\templates\image\state.png" alt="My test image"></p>
+	<ol>
+		<li><a href="http://127.0.0.1:5000">種族</a></li>
+		<li>性別</li>
+		<li>結案</li>
+		<li>武器</li>
+		<li>地點</li>
+	</ol>
+  </body>
+</html>
